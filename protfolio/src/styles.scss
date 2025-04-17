@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+.hidden-loading{
+  display: none;
+}  
+.offcanvas{
+  bottom: 100px !important;
+}
+.offcanvas.offcanvas-end{
+  border-radius: 10px !important;
+  top: 20px !important;
+  right: 20px !important;
+}
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';

@@ -1,0 +1,17 @@
+<!-- landing.component.html -->
+ <div>
+   <app-nav (navigateToSection)="scrollToSection($event)" class="nav-list"></app-nav> 
+   
+   <section id="home" data-section="home">
+     <app-home></app-home>
+   </section>
+   
+   <section id="about" data-section="about">
+     <app-about-me></app-about-me>
+   </section>
+
+   <section id="contact" data-section="contact">
+    <app-contact></app-contact>
+  </section>
+
+ </div>
