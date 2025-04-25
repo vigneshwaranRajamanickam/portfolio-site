@@ -4,6 +4,7 @@
     <nav class="menu" fxLayout="row" fxLayoutGap="20px" fxHide.lt-md >
       <div (click)="navigate('home')" class="nav-list-item" [class.active]="currentSection === 'home'" >Home</div>
       <div (click)="navigate('about')" class="nav-list-item" [class.active]="currentSection === 'about'" >About</div>
+      <div (click)="navigate('experiance')" class="nav-list-item" [class.active]="currentSection === 'experiance'" >Experiance</div> 
       <div (click)="navigate('contact')" class="nav-list-item"[class.active]="currentSection === 'contact'" >Contact</div> 
     </nav>
     
@@ -16,6 +17,7 @@
     <nav fxLayout="column" fxLayoutGap="20px" style="gap: 15px;">
       <div (click)="navigate('home') ;offcanvas.close('Close click')" class="nav-list-item canvas-list" [class.active]="currentSection === 'home'" >Home</div>
       <div (click)="navigate('about') ;offcanvas.close('Close click')" class="nav-list-item canvas-list"[class.active]="currentSection === 'about'" >About</div>
+      <div (click)="navigate('experiance')" class="nav-list-item" [class.active]="currentSection === 'experiance'" >Experiance</div> 
       <div (click)="navigate('contact');offcanvas.close('Close click')" class="nav-list-item canvas-list" [class.active]="currentSection === 'contact'" >Contact</div> 
     </nav>
 

@@ -1,3 +1,15 @@
-<div style="height: 500px; display: flex; justify-content: center;align-items: center;">
-  <p>about-me works!</p>
+<div class="profile-container"  [@slideUp]="isVisible ? 'visible' : 'hidden'"
+appInViewport
+(inViewport)="onIntersection($event)">
+  <div class="image-wrapper">
+    <img src="/assets/myphoto.webp" alt="Profile Photo" />
+    <div class="corner-border"></div>
+  </div>
+
+  <div class="content-section">
+    <h2>John Doe</h2>
+    <p>Creative Director at XYZ Agency</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae elit vel quam fermentum.</p>
+  </div>
 </div>
+
