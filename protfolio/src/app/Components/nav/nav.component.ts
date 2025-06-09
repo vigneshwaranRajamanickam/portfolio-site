@@ -1,43 +1,85 @@
-import { Component, EventEmitter, HostListener, Inject, inject, Output, Renderer2, TemplateRef, ViewChild, viewChild } from '@angular/core';
-import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
-import { FlexLayoutModule } from '@angular/flex-layout'; 
-import { DOCUMENT } from '@angular/common';
+import { Component, ElementRef, ViewChild, AfterViewInit, HostListener } from '@angular/core';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import ScrollToPlugin from 'gsap/ScrollToPlugin';
+
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 @Component({
   selector: 'app-nav',
-  imports: [FlexLayoutModule],
   templateUrl: './nav.component.html',
-  styleUrl: './nav.component.scss'
+  styleUrls: ['./nav.component.scss'],
 })
-export class NavComponent {
-  @ViewChild('content') templateRef!: TemplateRef<any>;
-  private offcanvasService = inject(NgbOffcanvas)  
-  isScrolled: boolean=false;
-  openEnd(content: TemplateRef<any>) {
-		this.offcanvasService.open(content, { position: 'end' });
-	}
-  @Output() navigateToSection = new EventEmitter<string>();
-  currentSection: string = 'home';
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    this.isScrolled = window.pageYOffset > 0;
-  }
-  constructor(@Inject(DOCUMENT) private document: Document, private renderer: Renderer2) {}
+export class NavComponent implements AfterViewInit {
+  isScrolled = false;
+  menuOpen = false;
+  activeSection: string = 'home';
 
-  ngOnInit(): void {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const id = entry.target.getAttribute('data-section');
-          if (id) this.currentSection = id;
-        }
+  @ViewChild('mobileMenu') mobileMenu!: ElementRef;
+
+  ngAfterViewInit(): void { 
+  const sections = ['home', 'about', 'projects', 'contact'];
+
+  sections.forEach((id) => {
+    ScrollTrigger.create({
+      trigger: `#${id}`,
+      start: 'top center',
+      end: 'bottom center',
+      onEnter: () => this.activeSection = id,
+      onEnterBack: () => this.activeSection = id,
+    });
+  });
+
+  ScrollTrigger.create({
+    trigger: document.body,
+    start: "top -10",
+    onEnter: () => this.isScrolled = true,
+    onLeaveBack: () => this.isScrolled = false,
+  }); 
+
+    ScrollTrigger.create({
+      start: 'top -10',
+      onEnter: () => (this.isScrolled = true),
+      onLeaveBack: () => (this.isScrolled = false),
+    });
+  }
+
+  scrollToSection(event: Event, sectionId: string): void {
+    event.preventDefault(); // ⛔ stop default jump behavior
+    const section = document.getElementById(sectionId);
+    if (section) {
+      gsap.to(window, {
+        duration: 0.01,
+        scrollTo: { y: section, offsetY: 60 }, // offset for sticky nav
+        ease: 'power2.out',
       });
-    }, { threshold: 0.5 }); // Trigger when 50% of section is visible
 
-    const sections = this.document.querySelectorAll('[data-section]');
-    sections.forEach(section => observer.observe(section));
+      this.closeMenu();
+    }
   }
-  navigate(section: string) {
-    this.navigateToSection.emit(section);
+
+  toggleMenu(): void {
+    this.menuOpen = !this.menuOpen;
+    gsap.to(this.mobileMenu.nativeElement, {
+      x: this.menuOpen ? 0 : '-100%',
+      duration: 0.5,
+      ease: 'power3.out',
+    });
+  }
+
+  closeMenu(): void {
+    this.menuOpen = false;
+    gsap.to(this.mobileMenu.nativeElement, {
+      x: '-100%',
+      duration: 0.5,
+      ease: 'power3.inOut',
+    });
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    if (window.innerWidth > 768) {
+      this.closeMenu();
+    }
   }
 }

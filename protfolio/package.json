@@ -6,7 +6,7 @@
     "start": "ng serve --port=5000",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "build: production":"ng build --configuration development",
+    "build: production": "ng build --configuration development",
     "test": "ng test",
     "serve:ssr:protfolio": "node dist/protfolio/server/server.mjs"
   },
@@ -25,8 +25,10 @@
     "@angular/ssr": "^19.0.7",
     "@ng-bootstrap/ng-bootstrap": "^18.0.0",
     "@popperjs/core": "^2.11.8",
+    "aos": "^2.3.4",
     "bootstrap": "^5.3.5",
     "express": "^4.18.2",
+    "gsap": "^3.13.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"

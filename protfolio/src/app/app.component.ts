@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router'; 
-import { LandingComponent } from "./Components/landing/landing.component";
+import { LandingComponent } from "./Components/landing/landing.component"; 
 
 @Component({
   selector: 'app-root',
@@ -9,5 +9,5 @@ import { LandingComponent } from "./Components/landing/landing.component";
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'protfolio';
+  title = 'protfolio'; 
 }

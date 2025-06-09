@@ -1,11 +1,18 @@
-<div style="height: 500px; display: flex; justify-content: center;align-items: center;">
- <div class="name_designation">
-  <h6>Hi</h6>
-  <h1>I'm</h1>
-  <h1 class="name">Vigneshwaran</h1> 
-  <h2 class="typewriter"> Software Engineer </h2> 
-  <button (click)="openEmail()" class="talk_btn">
-    <span>Let's talk</span> <span><i class="fa-solid fa-arrow-right"></i></span>
-  </button>
- </div>
-</div>
+<section id="home" class="home-section"  #homeContent>
+  <div class="content-wrapper">
+    <p class="greeting">Hi, I’m</p>
+    <h1 class="typing-text"><span #typingName class="gradient-text"></span></h1>
+
+    <p class="roles">Angular Developer • Software Engineer</p>
+
+    <p class="summary">
+      Passionate about building fast, responsive, and scalable web applications.<br />
+      Focused on clean code, great UX, and seamless animations.
+    </p>
+
+    <div class="cta-buttons">
+      <a href="assets/your-resume.pdf" target="_blank" class="btn">Resume</a>
+      <a href="#contact" class="btn btn-outline">Let's Talk</a>
+    </div>
+  </div>
+</section>

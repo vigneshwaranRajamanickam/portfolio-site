@@ -5,10 +5,11 @@ import { HomeComponent } from "../home/home.component";
 import { AboutMeComponent } from "../about-me/about-me.component";
 import { ViewportScroller } from '@angular/common';
 import { ContactComponent } from "../contact/contact.component";
+import { ExperianceComponent } from "../experiance/experiance.component";
 
 @Component({
   selector: 'app-landing',
-  imports: [NavComponent, HomeComponent, AboutMeComponent, ContactComponent],
+  imports: [NavComponent, HomeComponent, AboutMeComponent, ContactComponent, ExperianceComponent],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.scss'
 })
