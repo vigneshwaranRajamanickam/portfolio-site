@@ -50,7 +50,7 @@ export class ExperianceComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     gsap.from(this.experienceSection.nativeElement, {
-      y: 100,
+      x: 100,
       opacity: 0,
       duration: 1.5,
       scrollTrigger: {
@@ -59,16 +59,16 @@ export class ExperianceComponent implements AfterViewInit {
         toggleActions: 'play none none none',
       }
     });
-      gsap.from(this.experienceSection.nativeElement, {
-      x: 100,
-      opacity: 0,
-      duration: 1.2,
-      ease: 'power4.out',
-      scrollTrigger: {
-        trigger: this.experienceSection.nativeElement,
-        start: 'top 80%',
-        toggleActions: 'play none none none'
-      }
-    })
+    //   gsap.from(this.experienceSection.nativeElement, {
+    //   x: 100,
+    //   opacity: 0,
+    //   duration: 1.2,
+    //   ease: 'power4.out',
+    //   scrollTrigger: {
+    //     trigger: this.experienceSection.nativeElement,
+    //     start: 'top 80%',
+    //     toggleActions: 'play none none none'
+    //   }
+    // })
   }
 }
