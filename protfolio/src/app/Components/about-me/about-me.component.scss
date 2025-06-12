@@ -1,47 +1,84 @@
-.profile-container {
+.about-wrapper {
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 2rem;
-  padding: 2rem;
+  padding: 4rem 2rem;
+  // background: #fafafa;
+  color: #333;
+  // font-family: 'Poppins', sans-serif;
 
-  .image-wrapper {
-    position: relative;
-    width: 250px;
-    height: auto;
-
-    img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .corner-border {
-      position: absolute;
-      top: -10px;
-      left: -10px;
-      width: 100%;
-      height: 100%;
-      border: 10px solid #c0a97d; // beige-like color
-      border-right: none;
-      border-bottom: none;
-      z-index: -1;
-    }
-  }
-
-  .content-section {
-    max-width: 400px;
+  .about-left {
+    width: 50%;
+    // opacity: 0;
 
     h2 {
-      margin-bottom: 0.5rem;
-      font-size: 1.8rem;
-      font-weight: bold;
+      font-size: 2rem;
+      position: relative;
+      margin-bottom: 1.5rem;
+
+      .section-number {
+        color: #e91e63;
+        margin-right: 0.5rem;
+      }
+
+      &::after {
+        content: '';
+        display: inline-block;
+        width: 60%;
+        height: 2px;
+        // background: #000;
+         background: linear-gradient(to right, #ff4b2b, #f9cb28, #43e97b);
+        margin-left: 1rem;
+        vertical-align: middle;
+      }
     }
 
     p {
       font-size: 1rem;
-      line-height: 1.5;
-      color: #333;
+      margin-bottom: 1rem;
+      line-height: 1.7;
+    }
+
+    .highlight {
+      color: #e91e63;
+      font-weight: 600;
+    }
+
+    .tech-list p {
+      margin: 0.5rem 0;
+      font-size: 0.95rem;
+    }
+  }
+
+  .about-right {
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+
+    .photo-placeholder {
+      width: 250px;
+      height: 250px;
+      border: 3px solid #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      background: #fbe9e7;
+      border-radius: 8px;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 8px;
+      border: 3px solid #111;
     }
   }
 }
+.gradient-text {
+      background: linear-gradient(to right, #ff4b2b, #f9cb28, #43e97b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 2.2rem;
+      font-weight: 800;
+    }

@@ -22,6 +22,7 @@
   .logo {
     font-weight: bold;
     font-size: 1.8rem;
+    position: relative; /* Ensure positioning context for animation */
   }
 
   .hamburger {
@@ -43,6 +44,10 @@
     gap: 2rem;
     list-style: none;
 
+    li {
+      position: relative; /* Ensure positioning context for animation */
+    }
+
     li a {
       text-decoration: none;
       color: black;
@@ -62,18 +67,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
 
-    ul {
-      list-style: none;
-      text-align: center;
+  .mobile-links {
+    list-style: none;
+    text-align: center;
 
-      li { 
-        font-size: 2rem;
+    li {
+      font-size: 2rem;
+      position: relative; /* Ensure positioning context for animation */
+      margin: 1.5rem 0; /* Add spacing for vertical animation clarity */
 
-        a {
-          text-decoration: none;
-          color: #111;
-        }
+      a {
+        text-decoration: none;
+        color: #111;
       }
     }
   }
@@ -88,7 +95,8 @@
     }
   }
 }
-.nav-links li a ,.logo,.mobile-menu li a {
+
+.nav-links li a, .logo, .mobile-links li a {
   position: relative;
   text-decoration: none;
   font-weight: 500;
@@ -103,20 +111,20 @@
   -webkit-text-fill-color: #111;
 }
 
-.nav-links li a:hover  ,.logo:hover ,.mobile-menu li a :hover{
+.nav-links li a:hover, .logo:hover, .mobile-links li a:hover {
   background-size: 100% 100%;
   -webkit-text-fill-color: transparent;
   cursor: pointer;
 }
-.nav-links li a.active ,.mobile-menu li a.active {
+
+.nav-links li a.active, .mobile-links li a.active {
   font-weight: bold;
   text-decoration: underline;
-}
-.nav-links li a.active ,.mobile-menu li a.active {
   background-size: 100% 100%;
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(90deg, #ff8a00, #e52e71);
 }
+
 .close-icon {
   position: absolute;
   top: 1.5rem;
@@ -128,6 +136,6 @@
 
   &:hover {
     transform: scale(1.1);
-    color: #e52e71; // optional hover color
+    color: #e52e71; // Optional hover color
   }
 }

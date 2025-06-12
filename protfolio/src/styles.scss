@@ -82,3 +82,20 @@ body{
   -webkit-text-stroke: 1.5px rgb(109, 153, 235);    /* width + color */
   text-stroke: 1.5px rgb(109, 153, 235);;                /* future support */
 }
+
+body {
+  font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+  color: #222;
+  background-color: #fff;
+  line-height: 1.6;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 600;
+}
+
+.gradient-text {
+  font-weight: 800;
+}

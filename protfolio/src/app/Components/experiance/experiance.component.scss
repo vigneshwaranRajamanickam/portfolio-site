@@ -1,0 +1,90 @@
+.experience {
+  padding: 3rem 2rem;
+  display: flex;
+  justify-content: center;
+   .experience-section{
+    width: 50%;
+   }
+  .section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    .section-number {
+      color: #ff4081;
+      margin-right: 0.5rem;
+      font-size: 1.5rem;
+    }
+
+    .gradient-text {
+      background: linear-gradient(to right, #ff4b2b, #f9cb28, #43e97b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 2.2rem;
+      font-weight: 800;
+    }
+          &::after {
+        content: '';
+        display: inline-block;
+        width: 60%;
+        height: 2px;
+        // background: #000;
+         background: linear-gradient(to right, #ff4b2b, #f9cb28, #43e97b);
+        margin-left: 1rem;
+        vertical-align: middle;
+      }
+  }
+
+  .company-block {
+    margin-bottom: 2rem;
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+
+      .company-name {
+        color: #ff4081;
+      }
+    }
+
+    .duration {
+      font-style: italic;
+      font-size: 0.95rem;
+      color: #999;
+      margin-bottom: 1rem;
+    }
+
+    .project {
+      margin-top: 0.5rem;
+
+      h4 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: #333;
+      }
+
+      ul {
+        padding-left: 1.25rem;
+        list-style: none;
+
+        li {
+          margin-bottom: 0.75rem;
+          line-height: 1.6;
+          position: relative;
+          padding-left: 1rem;
+
+          &::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: #ff4081;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}

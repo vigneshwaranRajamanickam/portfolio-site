@@ -1,37 +1,47 @@
-import { Component } from '@angular/core';
 import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition,
-} from '@angular/animations';
+  Component,
+  AfterViewInit,
+  ElementRef,
+  ViewChild
+} from '@angular/core';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
 @Component({
   selector: 'app-about-me',
-  imports: [],
   templateUrl: './about-me.component.html',
-  styleUrl: './about-me.component.scss',
-   animations: [
-    trigger('slideUp', [
-      state('hidden', style({
-        opacity: 0,
-        transform: 'translateY(50px)',
-      })),
-      state('visible', style({
-        opacity: 1,
-        transform: 'translateY(0)',
-      })),
-      transition('hidden => visible', animate('600ms ease-out')),
-    ])
-  ]
+  styleUrls: ['./about-me.component.scss']
 })
-export class AboutMeComponent {
-  isVisible = false;
+export class AboutMeComponent implements AfterViewInit {
+  @ViewChild('aboutSection', { static: true }) aboutSection!: ElementRef;
 
-  onIntersection(entries: IntersectionObserverEntry[] |any) {
-    const entry = entries[0];
-    if (entry.isIntersecting) {
-      this.isVisible = true;
-    }
+  ngAfterViewInit(): void {
+    const section = this.aboutSection.nativeElement;
+
+    gsap.from(section.querySelector('.about-left'), {
+      x: -100,
+      opacity: 0,
+      duration: 1.2,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: section,
+        start: 'top 80%',
+        toggleActions: 'play none none none'
+      }
+    });
+
+    gsap.from(section.querySelector('.about-right'), {
+      x: 100,
+      opacity: 0,
+      duration: 1.2,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: section,
+        start: 'top 80%',
+        toggleActions: 'play none none none'
+      }
+    });
   }
 }

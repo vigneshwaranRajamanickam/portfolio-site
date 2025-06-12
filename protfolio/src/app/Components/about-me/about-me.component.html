@@ -1,15 +1,29 @@
-<div class="profile-container"  [@slideUp]="isVisible ? 'visible' : 'hidden'"
-appInViewport
-(inViewport)="onIntersection($event)">
-  <div class="image-wrapper">
-    <img src="/assets/myphoto.webp" alt="Profile Photo" />
-    <div class="corner-border"></div>
+<section #aboutSection class="about-wrapper">
+  <div class="about-left">
+    <h2 class="gradient-text"><span class="section-number"></span> About me</h2>
+    <p>
+      Hello! My name is <strong>Vigneshwaran R</strong>, and I love building efficient, scalable, and user-friendly web applications.
+      My journey in frontend started with a deep passion for animations, clean UI, and Angular development.
+    </p>
+    <p>
+      At <strong>Centizen Inc.</strong>, I work on both <span class="highlight">e-commerce</span> and <span class="highlight">website builder</span> platforms,
+      building reusable components, optimizing performance, and working with tools like Angular Signals and NgRx.
+    </p>
+    <p>
+      I’m always eager to explore new technologies and enhance performance with smart state management, animation libraries, and optimized architecture.
+    </p>
+
+    <div class="tech-list">
+      <p><strong>Frontend:</strong> Angular, TypeScript, RxJS, JavaScript, HTML, CSS</p>
+      <p><strong>State Management:</strong> NgRx, Signals</p>
+      <p><strong>Testing:</strong> Jest, Jasmine</p>
+      <p><strong>Optimization:</strong> Lazy Loading, Code Splitting, Web Components</p>
+      <p><strong>Dev Tools:</strong> Git, SourceTree, VS Code, Postman</p>
+    </div>
   </div>
 
-  <div class="content-section">
-    <h2>John Doe</h2>
-    <p>Creative Director at XYZ Agency</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae elit vel quam fermentum.</p>
-  </div>
-</div>
-
+  <!-- <div class="about-right">
+    Replace this with your image if desired
+    <div class="photo-placeholder">👨‍💻</div>
+  </div> -->
+</section>

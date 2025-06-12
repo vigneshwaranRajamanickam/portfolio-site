@@ -1,6 +1,6 @@
 <nav class="navbar" [class.scrolled]="isScrolled">
   <div class="nav-container">
-    <div class="logo">V.  </div>
+    <div class="logo">V.</div>
 
     <!-- Hamburger Icon -->
     <div class="hamburger" (click)="toggleMenu()">
@@ -8,23 +8,22 @@
     </div>
 
     <!-- Nav links for desktop -->
-<ul class="nav-links desktop">
+    <ul class="nav-links desktop">
   <li><a [class.active]="activeSection === 'home'" (click)="scrollToSection($event, 'home')">Home</a></li>
   <li><a [class.active]="activeSection === 'about'" (click)="scrollToSection($event, 'about')">About</a></li>
-  <li><a [class.active]="activeSection === 'projects'" (click)="scrollToSection($event, 'projects')">Experiance</a></li>
+  <li><a [class.active]="activeSection === 'projects'" (click)="scrollToSection($event, 'projects')">Experience</a></li>
   <li><a [class.active]="activeSection === 'contact'" (click)="scrollToSection($event, 'contact')">Contact</a></li>
 </ul>
-
   </div>
 
   <!-- Mobile full-screen menu -->
   <div class="mobile-menu" #mobileMenu>
     <div class="close-icon" (click)="closeMenu()">✕</div>
-<ul>
-   <li><a [class.active]="activeSection === 'home'" (click)="scrollToSection($event, 'home')">Home</a></li>
-  <li><a [class.active]="activeSection === 'about'" (click)="scrollToSection($event, 'about')">About</a></li>
-  <li><a [class.active]="activeSection === 'projects'" (click)="scrollToSection($event, 'projects')">Experiance</a></li>
-  <li><a [class.active]="activeSection === 'contact'" (click)="scrollToSection($event, 'contact')">Contact</a></li>
-</ul>
+    <ul class="mobile-links">
+      <li><a [class.active]="activeSection === 'home'" (click)="scrollToSection($event, 'home')">Home</a></li>
+      <li><a [class.active]="activeSection === 'about'" (click)="scrollToSection($event, 'about')">About</a></li>
+      <li><a [class.active]="activeSection === 'projects'" (click)="scrollToSection($event, 'projects')">Experience</a></li>
+      <li><a [class.active]="activeSection === 'contact'" (click)="scrollToSection($event, 'contact')">Contact</a></li>
+    </ul>
   </div>
 </nav>
